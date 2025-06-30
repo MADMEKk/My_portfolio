@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Dynamic Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website built with React and TailwindCSS. This portfolio is fully customizable, allowing you to showcase your projects, skills, and experience.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Modern Design**: Clean, professional design with smooth animations and transitions
+- **Fully Responsive**: Looks great on all devices, from mobile to desktop
+- **Dynamic Content**: Easily update your projects, skills, and personal information
+- **Project Showcase**: Detailed project pages with images, descriptions, and links
+- **Skills Section**: Visual representation of your skills and expertise
+- **Contact Form**: Interactive contact form for potential clients or employers
+- **Dark Theme**: Professional dark theme with customizable accent colors
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 18
+- React Router v6
+- TailwindCSS
+- Framer Motion for animations
+- React Icons
+- Styled Components
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14 or higher)
+- npm or yarn
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/portfolio.git
+   cd portfolio
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Start the development server:
+   ```
+   npm start
+   ```
 
-### `npm run eject`
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Customization
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Personal Information
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Edit the data files in the `src/data` directory:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `profile.js`: Your personal information, experience, and education
+- `projects.js`: Your projects with details and images
+- `skills.js`: Your skills categorized by type
 
-## Learn More
+### Styling
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The main color scheme can be customized in the `tailwind.config.js` file.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
 
-### Code Splitting
+Build the app for production:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+npm run build
+```
 
-### Analyzing the Bundle Size
+The build folder will contain the optimized production build ready for deployment.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
+MIT License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Acknowledgements
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [React](https://reactjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [React Icons](https://react-icons.github.io/react-icons/)

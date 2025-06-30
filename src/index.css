@@ -1,13 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0a192f;
+  color: #ccd6f6;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #172a45;
+  border-radius: 10px;
+  border: 2px solid #0a192f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64ffda;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 font-medium rounded transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-secondary text-primary hover:bg-opacity-80;
+  }
+
+  .btn-outline {
+    @apply border border-secondary text-secondary hover:bg-secondary hover:bg-opacity-10;
+  }
+
+  .section {
+    @apply py-20 px-4 md:px-8 lg:px-24 max-w-7xl mx-auto;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-light mb-10 flex items-center;
+  }
+  
+  .section-title::before {
+    @apply text-secondary mr-2 font-mono;
+    counter-increment: section;
+    content: "0" counter(section) ".";
+  }
+
+  .nav-link {
+    @apply text-tertiary hover:text-secondary transition-colors duration-300;
+  }
+
+  .card {
+    @apply bg-primary p-6 rounded-lg border border-tertiary border-opacity-20 hover:border-secondary transition-all duration-300;
+  }
 }
