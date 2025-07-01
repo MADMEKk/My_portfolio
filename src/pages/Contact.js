@@ -31,16 +31,14 @@ const Contact = () => {
     setSubmitError(false);
   
     try {
-      const res = await fetch('../api/send', {
+      const res = await fetch('/api/send', {  // Fixed: Changed from '../api/send' to '/api/send'
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          message: `
-            <b>Subject:</b> ${formData.subject}<br/>
-            <b>Message:</b><br/>${formData.message}
-          `,
+          subject: formData.subject,  // Added: Pass subject separately
+          message: formData.message,  // Changed: Send plain message, let API handle formatting
         }),
       });
   
@@ -232,4 +230,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

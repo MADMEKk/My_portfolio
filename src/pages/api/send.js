@@ -7,10 +7,10 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { name, email, message } = req.body;
+  const { name, email, subject, message } = req.body;
 
   // Validate required fields
-  if (!name || !email || !message) {
+  if (!name || !email || !subject || !message) {
     return res.status(400).json({ message: 'Missing required fields' });
   }
 
@@ -23,8 +23,8 @@ export default async function handler(req, res) {
   try {
     const data = await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>', // Use your verified domain here
-      to: ['aeddine360@gmail.com'], // Replace with your actual email
-      subject: `New Contact Form Message from ${name}`,
+      to: ['your-email@example.com'], // Replace with your actual email
+      subject: `${subject} - from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
@@ -35,11 +35,12 @@ export default async function handler(req, res) {
             <h3 style="color: #007bff; margin-top: 0;">Contact Details</h3>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Subject:</strong> ${subject}</p>
           </div>
           
           <div style="background-color: #fff; padding: 20px; border: 1px solid #dee2e6; border-radius: 5px;">
             <h3 style="color: #007bff; margin-top: 0;">Message</h3>
-            ${message}
+            <p style="white-space: pre-wrap;">${message}</p>
           </div>
           
           <div style="margin-top: 20px; padding: 15px; background-color: #e9ecef; border-radius: 5px; font-size: 12px; color: #6c757d;">
