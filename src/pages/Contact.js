@@ -85,7 +85,6 @@ const Contact = () => {
     // },
   ];
 
-  // Social links with actual URLs
   const socialLinks = [
     { icon: <FaGithub />, url: 'https://github.com/AlaEddineMEKKAOUI', ariaLabel: 'GitHub' },
     { icon: <FaLinkedinIn />, url: 'https://www.linkedin.com/in/alaeddine-mekkaoui/', ariaLabel: 'LinkedIn' },
