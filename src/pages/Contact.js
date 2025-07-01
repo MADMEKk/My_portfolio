@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaGithub, FaLinkedinIn, FaTwitter, FaTiktok, FaTelegram } from 'react-icons/fa';
 
 // Components
 import Section from '../components/Section';
