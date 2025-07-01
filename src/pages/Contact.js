@@ -29,13 +29,27 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitSuccess(false);
     setSubmitError(false);
-
-    // Simulate form submission
+  
     try {
-      // In a real application, you would send this data to your backend or a form service
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitSuccess(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      const res = await fetch('../api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: `
+            <b>Subject:</b> ${formData.subject}<br/>
+            <b>Message:</b><br/>${formData.message}
+          `,
+        }),
+      });
+  
+      if (res.ok) {
+        setSubmitSuccess(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitError(true);
+      }
     } catch (error) {
       setSubmitError(true);
     } finally {
