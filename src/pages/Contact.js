@@ -8,6 +8,9 @@ import Section from '../components/Section';
 // Data
 import { profile } from '../data/profile';
 
+// API endpoint - will use the appropriate URL based on environment
+const API_URL = '/api/send';
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -18,6 +21,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,27 +33,33 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitSuccess(false);
     setSubmitError(false);
+    setErrorMessage('');
   
     try {
-      const res = await fetch('/api/send', {  // Fixed: Changed from '../api/send' to '/api/send'
+      const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          subject: formData.subject,  // Added: Pass subject separately
-          message: formData.message,  // Changed: Send plain message, let API handle formatting
+          subject: formData.subject,
+          message: formData.message,
         }),
       });
   
+      const data = await res.json();
+      
       if (res.ok) {
         setSubmitSuccess(true);
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
         setSubmitError(true);
+        setErrorMessage(data.message || 'An error occurred while sending your message.');
       }
     } catch (error) {
+      console.error('Error sending message:', error);
       setSubmitError(true);
+      setErrorMessage('Network error. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -208,7 +218,7 @@ const Contact = () => {
 
                 {submitError && (
                   <div className="text-red-400 text-sm">
-                    There was an error sending your message. Please try again.
+                    {errorMessage || 'There was an error sending your message. Please try again.'}
                   </div>
                 )}
                 
