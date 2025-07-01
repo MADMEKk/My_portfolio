@@ -23,7 +23,7 @@ export default async function handler(req, res) {
   try {
     const data = await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>', // Use your verified domain here
-      to: ['your-email@example.com'], // Replace with your actual email
+      to: [process.env.RECIPIENT_EMAIL || 'aladine@example.com'], // Will use environment variable or fallback
       subject: `${subject} - from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

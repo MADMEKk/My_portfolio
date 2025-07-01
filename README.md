@@ -72,6 +72,50 @@ npm run build
 
 The build folder will contain the optimized production build ready for deployment.
 
+## Contact Form Setup
+
+To enable the contact form email functionality, follow these steps:
+
+1. **Create a Resend account**:
+   - Sign up at [Resend](https://resend.com/)
+   - Create an API key
+
+2. **Set up environment variables**:
+   - Rename the `.env.example` file to `.env` (or create a new `.env` file if it doesn't exist)
+   - Add your Resend API key: `RESEND_API_KEY=your_api_key_here`
+   - Set your recipient email: `RECIPIENT_EMAIL=your_email@example.com`
+
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+4. **For development**:
+   - Start both the React app and the Express server:
+   ```bash
+   npm run dev
+   ```
+   - The React app will run on port 3000 and the Express server on port 5000
+
+5. **For production**:
+   - Build the React app:
+   ```bash
+   npm run build
+   ```
+   - Start the server (which will serve both the API and the built React app):
+   ```bash
+   npm run server
+   ```
+
+## Troubleshooting Contact Form
+
+If the contact form is not working:
+
+1. Check if the API server is running
+2. Make sure your Resend API key is valid
+3. Check the console for any errors
+4. Verify the RECIPIENT_EMAIL is set correctly in your .env file
+
 ## License
 
 MIT License

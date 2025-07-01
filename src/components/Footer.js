@@ -12,7 +12,7 @@ const Footer = () => {
     { icon: <FaLinkedinIn />, url: 'https://www.linkedin.com/in/alaeddine-mekkaoui/', ariaLabel: 'LinkedIn' },
     { icon: <FaTiktok />, url: 'https://www.tiktok.com/@alaeddine5744', ariaLabel: 'TikTok' },
     { icon: <FaTelegram />, url: 'https://t.me/AlaEddineMek', ariaLabel: 'Telegram' },
-    { icon: <FaWhatsapp />, url: 'https://wa.me/213668629989', ariaLabel: 'WhatsApp' },
+    // { icon: <FaWhatsapp />, url: 'https://wa.me/213', ariaLabel: 'WhatsApp' },
     { icon: <FaEnvelope />, url: 'mailto:aeddine360@gmail.com', ariaLabel: 'Email' },
   ];
 

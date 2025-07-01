@@ -228,9 +228,9 @@ const HeroSection = () => {
             <a href="https://t.me/AlaEddineMek" target="_blank" rel="noopener noreferrer" className="text-tertiary hover:text-secondary text-2xl transition-all duration-300 hover:-translate-y-1">
               <FaTelegram />
             </a>
-            <a href="https://wa.me/213668629989" target="_blank" rel="noopener noreferrer" className="text-tertiary hover:text-secondary text-2xl transition-all duration-300 hover:-translate-y-1">
+            {/* <a href="https://wa.me/213" target="_blank" rel="noopener noreferrer" className="text-tertiary hover:text-secondary text-2xl transition-all duration-300 hover:-translate-y-1">
               <FaWhatsapp />
-            </a>
+            </a> */}
             <a href="mailto:aeddine360@gmail.com" className="text-tertiary hover:text-secondary text-2xl transition-all duration-300 hover:-translate-y-1">
               <FaEnvelope />
             </a>
