@@ -197,8 +197,8 @@ const Footer = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <p className="text-tertiary">aeddine360@gmail.com | +213 668 629 989</p>
-          <p className="text-tertiary mt-2">Mechria, Algeria</p>
+          <p className="text-tertiary">aeddine360@gmail.com </p>
+          <p className="text-tertiary mt-2">Oran, Algeria</p>
         </motion.div>
 
         {/* Copyright */}

@@ -77,18 +77,22 @@ const Contact = () => {
       value: profile.email,
       link: `mailto:${profile.email}`,
     },
-    {
-      icon: <FaPhone />,
-      label: 'Phone',
-      value: profile.phone,
-      link: `tel:${profile.phone.replace(/\D/g, '')}`,
-    },
+    // {
+    //   icon: <FaPhone />,
+    //   label: 'Phone',
+    //   value: profile.phone,
+    //   link: `tel:${profile.phone.replace(/\D/g, '')}`,
+    // },
   ];
 
+  // Social links with actual URLs
   const socialLinks = [
-    { icon: <FaGithub />, url: profile.social.github, label: 'GitHub' },
-    { icon: <FaLinkedinIn />, url: profile.social.linkedin, label: 'LinkedIn' },
-    { icon: <FaTwitter />, url: profile.social.twitter, label: 'Twitter' },
+    { icon: <FaGithub />, url: 'https://github.com/AlaEddineMEKKAOUI', ariaLabel: 'GitHub' },
+    { icon: <FaLinkedinIn />, url: 'https://www.linkedin.com/in/alaeddine-mekkaoui/', ariaLabel: 'LinkedIn' },
+    { icon: <FaTiktok />, url: 'https://www.tiktok.com/@alaeddine5744', ariaLabel: 'TikTok' },
+    { icon: <FaTelegram />, url: 'https://t.me/AlaEddineMek', ariaLabel: 'Telegram' },
+    // { icon: <FaWhatsapp />, url: 'https://wa.me/213', ariaLabel: 'WhatsApp' },
+    { icon: <FaEnvelope />, url: 'mailto:aeddine360@gmail.com', ariaLabel: 'Email' },
   ];
 
   return (

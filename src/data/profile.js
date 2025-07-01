@@ -9,8 +9,8 @@ export const profile = {
     
     Beyond web and mobile development, I'm exploring machine learning and robotics, with interests in reinforcement learning, multi-agent systems, and simulation environments like Gazebo. I'm fluent in English and a native Arabic speaker, allowing me to collaborate effectively with diverse teams.
   `,
-  location: "Algeria",
-  email: "contact@example.com",
+  location: "Algeria , Oran",
+  email: "aeddine360@gmail.com",
   phone: "+213 000 000 000",
   social: {
     linkedin: "https://linkedin.com/in/yourusername",
