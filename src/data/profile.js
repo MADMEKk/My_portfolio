@@ -61,16 +61,16 @@ export const profile = {
   ],
   education: [
     {
-      degree: "Computer Science",
-      institution: "University Example",
-      period: "2015 - 2019",
-      description: "Focused on software engineering, algorithms, and data structures. Developed strong programming fundamentals.",
+      degree: "Master’s Degree in Computer Science",
+      institution: "University of Oran 1 Ahmed Ben Bella",
+      period: "2023 - 2025",
+      description: "Focusing on AI, machine learning and advanced system design.",
     },
     {
-      degree: "Self-Directed Learning",
-      institution: "Online Platforms",
-      period: "2019 - Present",
-      description: "Continuous learning through online courses, documentation, and practical projects in web development, mobile development, and machine learning.",
+      degree: "Bachelor’s Degree in Computer Science",
+      institution: "University of Oran 1 Ahmed Ben Bella",
+      period: "2020 - 2023",
+      description: "Built my foundation in software engineering and machine learning.",
     }
   ],
   competitions: [

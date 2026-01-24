@@ -151,8 +151,19 @@ const BioSection = () => {
                     <FaGraduationCap className="text-accent text-xl" />
                   </div>
                   <div>
+                    <h4 className="text-tertiary font-bold">Master’s Degree in Computer Science</h4>
+                    <p className="text-light">University of Oran 1 Ahmed Ben Bella</p>
+                    <p className="text-tertiary text-sm">2023 - 2025</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-accent/20 p-3 rounded-full mr-4">
+                    <FaGraduationCap className="text-accent text-xl" />
+                  </div>
+                  <div>
                     <h4 className="text-tertiary font-bold">Bachelor's Degree in Computer Science</h4>
-                    <p className="text-light">University of Oran 1</p>
+                    <p className="text-light">University of Oran 1 Ahmed Ben Bella</p>
                     <p className="text-tertiary text-sm">2020 - 2023</p>
                   </div>
                 </div>

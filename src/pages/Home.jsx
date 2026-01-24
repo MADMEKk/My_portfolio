@@ -205,8 +205,8 @@ const Home = () => {
                     className="glass-card p-6 border-l-4 border-secondary hover:translate-y-[-5px] transition-all duration-300"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    viewport={{ once: true, amount: 0.1, margin: "-50px" }}
+                    transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
                   >
                     <div className="flex flex-wrap justify-between items-start">
                       <div>
@@ -246,8 +246,8 @@ const Home = () => {
                       className="glass-card p-6 border-l-4 border-secondary hover:translate-y-[-5px] transition-all duration-300"
                       initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      viewport={{ once: true, amount: 0.1, margin: "-50px" }}
+                      transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
                     >
                       <h4 className="text-light font-bold">{edu.degree}</h4>
                       <p className="text-secondary">{edu.institution}</p>

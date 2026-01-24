@@ -10,9 +10,10 @@ const Section = ({
   hideSectionNumber = false,
 }) => {
   const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
+      y: 0,
       transition: {
         duration: 0.6,
         ease: 'easeOut'
@@ -26,7 +27,7 @@ const Section = ({
       className={`section ${className}`}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.1, margin: "-100px" }}
       variants={sectionVariants}
     >
       {title && (

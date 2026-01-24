@@ -7,8 +7,8 @@ const TimelineItem = ({ date, title, subtitle, description, icon, isLeft, index 
     <motion.div
       initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 50 }}
+      viewport={{ once: true, amount: 0.1, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
       className={`flex items-start gap-6 ${isLeft ? 'md:flex-row-reverse' : 'md:flex-row'} flex-col mb-16 relative w-full`}
     >
       {/* Date column */}
@@ -61,10 +61,18 @@ const Timeline = () => {
   // Timeline data with categories
   const events = useMemo(() => [
     {
+      date: "2023 - 2025",
+      title: "Master’s Degree in Computer Science",
+      subtitle: "University of Oran 1 Ahmed Ben Bella",
+      description: "Deep dive into AI and advanced system architecture.",
+      icon: <FaGraduationCap className="text-secondary text-xl" />,
+      category: "education"
+    },
+    {
       date: "2020 - 2023",
       title: "Bachelor's Degree in Computer Science",
-      subtitle: "University of Oran 1",
-      description: "Studied computer science with focus on software engineering, algorithms, and data structures. Graduated with honors and completed a thesis on machine learning applications in healthcare.",
+      subtitle: "University of Oran 1 Ahmed Ben Bella",
+      description: "Graduated with honors, focusing on software engineering and ML.",
       icon: <FaGraduationCap className="text-secondary text-xl" />,
       category: "education"
     },

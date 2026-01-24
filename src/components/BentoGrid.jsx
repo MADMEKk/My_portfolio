@@ -16,8 +16,8 @@ const BentoGrid = ({ projects }) => {
                         className={`${colSpan} group relative overflow-hidden rounded-sm bg-primary border border-white/10 hover:border-white/30 transition-all duration-500`}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        viewport={{ once: true, amount: 0.1, margin: "-50px" }}
+                        transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                     >
                         {/* Background Image with Overlay */}
                         <div className="absolute inset-0 z-0">
