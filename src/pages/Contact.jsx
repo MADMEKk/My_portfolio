@@ -49,10 +49,9 @@ const Contact = () => {
       // Prepare template parameters matching your EmailJS template
       const templateParams = {
         name: formData.name,
-        email: formData.email,
         title: formData.title,
         time: new Date().toLocaleString(),
-        message: formData.message,
+        message: `Subject: ${formData.title}\n\n${formData.email}\n\n${formData.message}`,
       };
 
       await emailjs.send(
