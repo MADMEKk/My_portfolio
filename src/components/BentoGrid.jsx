@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaArrowRight } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaArrowRight, FaLock } from 'react-icons/fa';
 
 const BentoGrid = ({ projects }) => {
     return (
@@ -35,11 +35,25 @@ const BentoGrid = ({ projects }) => {
                                 <div className="flex justify-between items-end mb-3">
                                     <h3 className="text-3xl font-serif font-bold text-white leading-none">{project.title}</h3>
                                     <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-x-4 group-hover:translate-x-0">
-                                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-full hover:bg-secondary hover:text-dark transition-colors">
-                                            <FaGithub size={16} />
-                                        </a>
-                                        {project.demo && (
-                                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-full hover:bg-secondary hover:text-dark transition-colors">
+                                        {project.github ? (
+                                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-full hover:bg-secondary hover:text-dark transition-colors">
+                                                <FaGithub size={16} />
+                                            </a>
+                                        ) : (
+                                            <div className="p-2 bg-white/10 rounded-full text-tertiary cursor-not-allowed group/lock relative">
+                                                <FaLock size={16} />
+                                                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs bg-dark text-white rounded opacity-0 group-hover/lock:opacity-100 transition-opacity whitespace-nowrap">
+                                                    Private Repo
+                                                </span>
+                                            </div>
+                                        )}
+                                        {project.media && project.media.length > 0 && (
+                                            <a href={`/projects/${project.id}`} className="p-2 bg-white/10 rounded-full hover:bg-secondary hover:text-dark transition-colors">
+                                                <FaExternalLinkAlt size={16} />
+                                            </a>
+                                        )}
+                                        {project.liveDemo && (
+                                            <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-full hover:bg-secondary hover:text-dark transition-colors">
                                                 <FaExternalLinkAlt size={16} />
                                             </a>
                                         )}

@@ -1,13 +1,13 @@
 export const profile = {
   name: "Aladine",
-  role: "Full-Stack Developer & ML & AI Enthusiast",
-  bio: "I'm a passionate full-stack developer with expertise in Django, React, and Flutter. I specialize in building robust web and mobile applications with a strong focus on backend development. With a growing interest in machine learning and robotics, I'm constantly expanding my skills to create innovative solutions.",
+  role: "Full-Stack Engineer & AI Specialist",
+  bio: "I build scalable full-stack systems and experiment with AI agents. Winner of national hackathons and passionate about merging complex backend logic with intuitive UI.",
   about: `
-    I have extensive experience developing full-stack applications using Django and React, with a particular focus on REST APIs, authentication systems, and database design. My work includes building property management systems, admin panels, and mobile applications using Flutter.
+    I don't just write code; I engineer solutions. From winning national hackathons to building offline-first distributed systems for dental clinics, I obsess over performance, reliability, and user experience.
     
-    My approach to development centers around creating clean, maintainable code and designing intuitive user experiences. I enjoy tackling complex problems and learning new technologies to enhance my skill set.
+    My background combines rigorous computer science fundamentals (Master’s in CS) with pragmatic, "shipping-focused" development. Whether it's training T5 models for meal planning or architecting custom LAN sync protocols, I love solving hard technical problems.
     
-    Beyond web and mobile development, I'm exploring machine learning and robotics, with interests in reinforcement learning, multi-agent systems, and simulation environments like Gazebo. I'm fluent in English and a native Arabic speaker, allowing me to collaborate effectively with diverse teams.
+    When I'm not coding, I'm likely researching multi-agent systems or optimizing my home lab. I speak Arabic, English, and French, and I thrive in fast-paced, innovative teams.
   `,
   location: "Algeria , Oran",
   email: "aeddine360@gmail.com",
@@ -23,13 +23,10 @@ export const profile = {
       company: "Property Management Platform",
       period: "2021 - Present",
       location: "Remote",
-      description: "Developing a comprehensive property management system using Django, DRF, React, and Flutter.",
+      description: "Building a Django + React + Flutter platform for property management.",
       achievements: [
-        "Built REST APIs with Django Rest Framework including JWT authentication and complex filtering",
-        "Developed admin panels and dashboards using React.js",
-        "Created mobile applications with Flutter connected to Django backend",
-        "Implemented Docker containerization for the entire stack (Django, PostgreSQL, Nginx)",
-        "Managed database design and optimization for PostgreSQL"
+        "Built REST APIs with DRF, JWT auth, and Docker deployment",
+        "Developed admin dashboard and mobile app"
       ]
     },
     {
@@ -37,25 +34,21 @@ export const profile = {
       company: "Data Analysis Projects",
       period: "2020 - 2021",
       location: "Remote",
-      description: "Worked on various data analysis and visualization projects using Python and related libraries.",
+      description: "Data analysis and visualization projects.",
       achievements: [
-        "Developed data visualization solutions using Matplotlib and related libraries",
-        "Created automated data processing pipelines",
-        "Implemented basic machine learning models for data analysis",
-        "Collaborated with remote teams using Git and GitHub"
+        "Created automated data pipelines with Pandas",
+        "Implemented basic ML models for pattern analysis"
       ]
     },
     {
       position: "Robotics Enthusiast",
-      company: "Personal Projects",
+      company: "Personal Lab",
       period: "2019 - Present",
       location: "Home Lab",
-      description: "Exploring robotics and reinforcement learning through personal projects and experiments.",
+      description: "Exploring ROS2, Gazebo, and reinforcement learning.",
       achievements: [
-        "Learning ROS2 for robot navigation and control",
-        "Experimenting with Gazebo for multi-agent simulation environments",
-        "Studying reinforcement learning algorithms for robotics applications",
-        "Working with SLAM and navigation techniques"
+        "Learning SLAM and multi-agent navigation",
+        "Experimenting with multi-robot RL algorithms"
       ]
     }
   ],

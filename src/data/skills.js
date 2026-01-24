@@ -1,43 +1,43 @@
-// Focused skills data without arbitrary percentages
+// Focused skills data
 export const skills = [
   {
-    category: 'Full-Stack Development',
+    category: 'Backend & Systems',
     technologies: [
       { name: 'Python (Django/DRF)', level: 'Expert' },
-      { name: 'JavaScript (React)', level: 'dProficient' },
-      { name: 'Dart (Flutter)', level: 'Proficient' },
-      { name: 'HMTL5 / CSS3', level: 'Expert' },
       { name: 'PostgreSQL / SQL', level: 'Proficient' },
+      { name: 'Docker & DevOps', level: 'Proficient' },
+      { name: 'Redis / Celery', level: 'Advanced' },
+      { name: 'Nginx', level: 'Intermediate' },
     ]
   },
   {
-    category: 'Machine Learning & AI',
+    category: 'Frontend & Mobile',
+    technologies: [
+      { name: 'Flutter (Dart)', level: 'Advanced' },
+      { name: 'React.js', level: 'Proficient' },
+      { name: 'JavaScript / ES6+', level: 'Expert' },
+      { name: 'HTML5 / CSS3', level: 'Expert' },
+      { name: 'TailwindCSS', level: 'Proficient' },
+    ]
+  },
+  {
+    category: 'AI & Robotics',
     technologies: [
       { name: 'PyTorch / TensorFlow', level: 'Advanced' },
-      { name: 'Deep Learning', level: 'Advanced' },
-      { name: 'Computer Vision', level: 'Intermediate' },
+      { name: 'Computer Vision (YOLO)', level: 'Advanced' },
+      { name: 'LLMs (T5, GPT)', level: 'Intermediate' },
+      { name: 'ROS2', level: 'Intermediate' },
       { name: 'Reinforcement Learning', level: 'Intermediate' },
-      { name: 'Data Visualization', level: 'Proficient' },
     ]
   },
   {
-    category: 'Tools & DevOps',
+    category: 'Core Competencies',
     technologies: [
-      { name: 'Git & GitHub', level: 'Expert' },
-      { name: 'Docker', level: 'Intermediate' },
-      { name: 'Linux / Bash', level: 'Proficient' },
-      { name: 'Nginx', level: 'Intermediate' },
-      { name: 'VS Code', level: 'Expert' },
-    ]
-  },
-  {
-    category: 'Soft Skills & Languages',
-    technologies: [
+      { name: 'System Architecture', level: 'Expert' },
       { name: 'Problem Solving', level: 'Expert' },
-      { name: 'Team Collaboration', level: 'Expert' },
-      { name: 'English', level: 'Fluent' },
-      { name: 'Arabic', level: 'Native' },
-      { name: 'French', level: 'Proficient' },
+      { name: 'Linux / Bash', level: 'Proficient' },
+      { name: 'Git & CI/CD', level: 'Expert' },
+      { name: 'Trilingual Communication', level: 'Fluent' },
     ]
   }
 ]; 

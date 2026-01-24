@@ -77,8 +77,8 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.7 }}
           >
-            Constructing elegant digital experiences with precision and clarity.
-            Specializing in full-stack architecture and machine learning solutions.
+            Building robust full-stack architectures and intelligent AI agents.
+            focused on shipping scalable, offline-first, and high-performance solutions.
           </motion.p>
 
           <motion.div

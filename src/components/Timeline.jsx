@@ -62,9 +62,9 @@ const Timeline = () => {
   const events = useMemo(() => [
     {
       date: "2023 - 2025",
-      title: "Master’s Degree in Computer Science",
+      title: "Master's Degree in Computer Science",
       subtitle: "University of Oran 1 Ahmed Ben Bella",
-      description: "Deep dive into AI and advanced system architecture.",
+      description: "Specializing in AI and advanced system architecture.",
       icon: <FaGraduationCap className="text-secondary text-xl" />,
       category: "education"
     },
@@ -72,7 +72,7 @@ const Timeline = () => {
       date: "2020 - 2023",
       title: "Bachelor's Degree in Computer Science",
       subtitle: "University of Oran 1 Ahmed Ben Bella",
-      description: "Graduated with honors, focusing on software engineering and ML.",
+      description: "Graduated with honors. Focus: SE and ML.",
       icon: <FaGraduationCap className="text-secondary text-xl" />,
       category: "education"
     },
@@ -80,7 +80,7 @@ const Timeline = () => {
       date: "2022",
       title: "National Olympiad - 2nd Place",
       subtitle: "Algerian Olympiad in Informatics",
-      description: "Secured 2nd place in the national competition, showcasing problem-solving skills and algorithm optimization. Developed efficient solutions for complex computational problems under time constraints.",
+      description: "2nd nationally after winning 1st regionally.",
       icon: <FaTrophy className="text-secondary text-xl" />,
       category: "achievement"
     },
@@ -88,7 +88,7 @@ const Timeline = () => {
       date: "2022 - 2023",
       title: "Software Developer Intern",
       subtitle: "Tech Solutions Inc.",
-      description: "Developed web applications using Django and React. Implemented RESTful APIs and integrated third-party services. Worked in an agile team environment and participated in daily stand-ups and sprint planning.",
+      description: "Django + React development in an agile team.",
       icon: <FaBriefcase className="text-secondary text-xl" />,
       category: "work"
     },
@@ -96,7 +96,7 @@ const Timeline = () => {
       date: "2023",
       title: "Hackathon Winner - Oran",
       subtitle: "Infinite Loop Club",
-      description: "Led a team to victory in a 48-hour hackathon, building an innovative solution for smart agriculture using IoT sensors. The project was later featured in a regional tech conference.",
+      description: "Led team to victory with IoT smart agriculture solution.",
       icon: <FaCode className="text-secondary text-xl" />,
       category: "achievement"
     },
@@ -104,7 +104,7 @@ const Timeline = () => {
       date: "2023 - Present",
       title: "Full-Stack Developer",
       subtitle: "Freelance",
-      description: "Working on various projects including web applications, mobile apps, and machine learning solutions for clients worldwide. Specializing in React, Node.js, and Python-based technologies.",
+      description: "Building web/mobile apps and ML solutions for clients.",
       icon: <FaBriefcase className="text-secondary text-xl" />,
       category: "work"
     }

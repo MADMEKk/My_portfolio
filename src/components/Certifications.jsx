@@ -5,9 +5,8 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const CertificationCard = ({ cert }) => {
   return (
-    <motion.div
+    <div
       className="glass-card"
-      whileHover={{ y: -5 }}
     >
       <div className="relative aspect-video overflow-hidden">
         <img
@@ -45,7 +44,7 @@ const CertificationCard = ({ cert }) => {
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -62,9 +61,6 @@ const Certifications = () => {
         >
           <h2 className="text-4xl font-bold text-light mb-4">Certifications</h2>
           <div className="w-24 h-1 bg-accent mx-auto"></div>
-          <p className="text-tertiary mt-6 max-w-2xl mx-auto">
-            Professional certifications and achievements that validate my expertise in various technologies.
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

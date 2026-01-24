@@ -10,12 +10,11 @@ const Section = ({
   hideSectionNumber = false,
 }) => {
   const sectionVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.4,
         ease: 'easeOut'
       }
     }

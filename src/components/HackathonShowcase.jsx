@@ -74,7 +74,7 @@ const HackathonShowcase = () => {
               className={`p-6 bg-primary rounded-sm border ${item.color} hover:bg-white/5 transition-colors duration-300 group`}
             >
               <div className="flex justify-between items-start mb-4">
-                <div className="p-3 bg-white/5 rounded-full group-hover:scale-110 transition-transform duration-300">
+                <div className="p-3 bg-white/5 rounded-full transition-transform duration-300">
                   <span className="text-xl">{item.icon}</span>
                 </div>
                 <span className="text-xs font-mono text-tertiary px-2 py-1 bg-white/5 rounded">
