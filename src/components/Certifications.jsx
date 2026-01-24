@@ -5,14 +5,14 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const CertificationCard = ({ cert }) => {
   return (
-    <motion.div 
-      className="bg-dark bg-opacity-60 rounded-lg overflow-hidden border border-secondary border-opacity-20 hover:border-opacity-50 transition-all duration-300"
-      whileHover={{ y: -5, boxShadow: '0 10px 30px -15px rgba(100, 255, 218, 0.2)' }}
+    <motion.div
+      className="glass-card"
+      whileHover={{ y: -5 }}
     >
       <div className="relative aspect-video overflow-hidden">
-        <img 
-          src={cert.image} 
-          alt={`${cert.title} certificate`} 
+        <img
+          src={cert.image}
+          alt={`${cert.title} certificate`}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
@@ -25,9 +25,9 @@ const CertificationCard = ({ cert }) => {
         </div>
         <p className="text-tertiary text-sm mb-3">{cert.description}</p>
         {cert.url && (
-          <a 
-            href={cert.url} 
-            target="_blank" 
+          <a
+            href={cert.url}
+            target="_blank"
             rel="noopener noreferrer"
             className="text-secondary inline-flex items-center hover:text-light transition-colors duration-300"
           >
@@ -36,9 +36,9 @@ const CertificationCard = ({ cert }) => {
         )}
         <div className="mt-3 flex flex-wrap gap-2">
           {cert.skills.map((skill, i) => (
-            <span 
+            <span
               key={i}
-              className="px-2 py-1 bg-secondary bg-opacity-10 text-secondary text-xs rounded-full"
+              className="px-2 py-1 bg-accent/10 text-secondary text-xs rounded-full"
             >
               {skill}
             </span>
@@ -61,12 +61,12 @@ const Certifications = () => {
           className="mb-12 text-center"
         >
           <h2 className="text-4xl font-bold text-light mb-4">Certifications</h2>
-          <div className="w-24 h-1 bg-secondary mx-auto"></div>
+          <div className="w-24 h-1 bg-accent mx-auto"></div>
           <p className="text-tertiary mt-6 max-w-2xl mx-auto">
             Professional certifications and achievements that validate my expertise in various technologies.
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certifications.map((cert, index) => (
             <motion.div

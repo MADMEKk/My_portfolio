@@ -2,24 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { RiMenu4Line, RiCloseLine } from 'react-icons/ri';
+import useScrollPosition from '../hooks/useScrollPosition';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const scrollPosition = useScrollPosition();
+  const scrolled = scrollPosition > 50;
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -33,15 +22,16 @@ const Navbar = () => {
   ];
 
   return (
-    <header 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-primary bg-opacity-90 shadow-lg backdrop-blur-sm py-4' : 'py-6'
-      }`}
+    <header
+      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl rounded-full z-50 transition-all duration-300 border ${scrolled
+        ? 'bg-black/60 backdrop-blur-xl border-white/10 shadow-2xl py-3'
+        : 'bg-transparent border-transparent py-5'
+        }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-secondary font-mono">
-          Portfolio
+        <Link to="/" className="text-xl font-serif font-bold text-white tracking-tight">
+          Mekkaoui.
         </Link>
 
         {/* Desktop Navigation */}
@@ -50,12 +40,10 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.path}
-              className={`nav-link font-medium ${
-                location.pathname === link.path ? 'text-secondary' : ''
-              }`}
+              className={`nav-link font-medium ${location.pathname === link.path ? 'text-secondary' : ''
+                }`}
             >
-              <span className="text-secondary font-mono mr-1">0{index + 1}.</span>
-              {link.name}
+              <span className="relative z-10">{link.name}</span>
             </Link>
           ))}
           <a
@@ -91,9 +79,8 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`nav-link font-medium text-lg ${
-                  location.pathname === link.path ? 'text-secondary' : ''
-                }`}
+                className={`nav-link font-medium text-lg ${location.pathname === link.path ? 'text-secondary' : ''
+                  }`}
               >
                 <span className="text-secondary font-mono mr-1">0{index + 1}.</span>
                 {link.name}

@@ -18,12 +18,12 @@ const Projects = () => {
 
   // Filter projects based on search query and selected technology
   const filteredProjects = projects.filter(project => {
-    const matchesSearch = 
+    const matchesSearch =
       project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.description.toLowerCase().includes(searchQuery.toLowerCase());
-    
+
     const matchesTech = selectedTech === '' || project.technologies.includes(selectedTech);
-    
+
     return matchesSearch && matchesTech;
   });
 
@@ -47,17 +47,17 @@ const Projects = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.5 }
     }
   };
 
   return (
-    <div className="pt-24 pb-16">
-      <Section 
-        title="Projects" 
+    <div className="pt-5 pb-16">
+      <Section
+        title="Projects"
         subtitle="A collection of projects I've worked on. Each project showcases different skills and technologies."
         hideSectionNumber
       >
@@ -89,7 +89,7 @@ const Projects = () => {
 
         {/* Projects Grid */}
         {filteredProjects.length > 0 ? (
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
             initial="hidden"
@@ -100,9 +100,9 @@ const Projects = () => {
                 <Link to={`/projects/${project.id}`} className="group">
                   <div className="card overflow-hidden h-full flex flex-col hover:translate-y-[-5px]">
                     <div className="relative overflow-hidden h-48 rounded-t-md">
-                      <img 
-                        src={project.image} 
-                        alt={project.title} 
+                      <img
+                        src={project.image}
+                        alt={project.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                     </div>
@@ -111,11 +111,10 @@ const Projects = () => {
                       <p className="text-tertiary mt-2">{project.description}</p>
                       <div className="flex flex-wrap gap-2 mt-4">
                         {project.technologies.slice(0, 3).map((tech, i) => (
-                          <span 
-                            key={i} 
-                            className={`text-xs py-1 px-2 rounded-full bg-dark text-secondary border border-secondary ${
-                              selectedTech === tech ? 'bg-secondary bg-opacity-20' : ''
-                            }`}
+                          <span
+                            key={i}
+                            className={`text-xs py-1 px-2 rounded-full bg-dark text-secondary border border-secondary ${selectedTech === tech ? 'bg-accent/20' : ''
+                              }`}
                           >
                             {tech}
                           </span>
@@ -130,10 +129,10 @@ const Projects = () => {
                     <div className="flex justify-between items-center px-6 py-3 border-t border-tertiary border-opacity-20">
                       <div className="flex space-x-4 text-tertiary">
                         {project.github && (
-                          <a 
-                            href={project.github} 
-                            className="hover:text-secondary" 
-                            target="_blank" 
+                          <a
+                            href={project.github}
+                            className="hover:text-secondary"
+                            target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
                           >
@@ -141,10 +140,10 @@ const Projects = () => {
                           </a>
                         )}
                         {project.demo && (
-                          <a 
-                            href={project.demo} 
-                            className="hover:text-secondary" 
-                            target="_blank" 
+                          <a
+                            href={project.demo}
+                            className="hover:text-secondary"
+                            target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
                           >

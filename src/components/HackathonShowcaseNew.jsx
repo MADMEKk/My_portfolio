@@ -112,7 +112,7 @@ const HackathonShowcase = () => {
           className="mb-12 text-center"
         >
           <h2 className="text-4xl font-bold text-light mb-4">Hackathon Highlights</h2>
-          <div className="w-24 h-1 bg-secondary mx-auto"></div>
+          <div className="w-24 h-1 bg-accent mx-auto"></div>
           <p className="text-tertiary mt-6 max-w-2xl mx-auto">
             Showcasing memorable moments from hackathons and competitions where I demonstrated
             problem-solving skills and technical expertise.

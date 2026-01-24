@@ -1,61 +1,43 @@
+// Focused skills data without arbitrary percentages
 export const skills = [
   {
-    category: 'Programming Languages',
+    category: 'Full-Stack Development',
     technologies: [
-      { name: 'Python', level: 90 },
-      { name: 'JavaScript', level: 75 },
-      { name: 'HTML/CSS', level: 75 },
-      { name: 'Dart (Flutter)', level: 75 },
-      { name: 'SQL', level: 80 },
+      { name: 'Python (Django/DRF)', level: 'Expert' },
+      { name: 'JavaScript (React)', level: 'dProficient' },
+      { name: 'Dart (Flutter)', level: 'Proficient' },
+      { name: 'HMTL5 / CSS3', level: 'Expert' },
+      { name: 'PostgreSQL / SQL', level: 'Proficient' },
     ]
   },
   {
-    category: 'Frameworks & Libraries',
+    category: 'Machine Learning & AI',
     technologies: [
-      { name: 'Django / DRF', level: 90 },
-      { name: 'React.js', level: 75 },
-      { name: 'Flutter', level: 75 },
-      { name: 'Machine Learning / RL', level: 60 },
-      { name: 'Matplotlib / Data Viz', level: 60 },
+      { name: 'PyTorch / TensorFlow', level: 'Advanced' },
+      { name: 'Deep Learning', level: 'Advanced' },
+      { name: 'Computer Vision', level: 'Intermediate' },
+      { name: 'Reinforcement Learning', level: 'Intermediate' },
+      { name: 'Data Visualization', level: 'Proficient' },
     ]
   },
   {
-    category: 'Databases',
+    category: 'Tools & DevOps',
     technologies: [
-      { name: 'PostgreSQL', level: 75 },
-      { name: 'SQLite', level: 90 },
-      { name: 'Redis', level: 60 },
-      { name: 'Firebase', level: 60 },
+      { name: 'Git & GitHub', level: 'Expert' },
+      { name: 'Docker', level: 'Intermediate' },
+      { name: 'Linux / Bash', level: 'Proficient' },
+      { name: 'Nginx', level: 'Intermediate' },
+      { name: 'VS Code', level: 'Expert' },
     ]
   },
   {
-    category: 'DevOps & Tools',
+    category: 'Soft Skills & Languages',
     technologies: [
-      { name: 'Docker', level: 75 },
-      { name: 'Nginx', level: 60 },
-      { name: 'Git & GitHub', level: 75 },
-      { name: 'Linux / Ubuntu', level: 75 },
-      { name: 'TeamViewer / Remote Work', level: 75 },
-    ]
-  },
-  {
-    category: 'Robotics',
-    technologies: [
-      { name: 'ROS2', level: 60 },
-      { name: 'Gazebo', level: 60 },
-    ]
-  },
-  {
-    category: 'Design',
-    technologies: [
-      { name: 'Graphics / Logo Design', level: 60 },
-    ]
-  },
-  {
-    category: 'Languages',
-    technologies: [
-      { name: 'English', level: 90 },
-      { name: 'Arabic', level: 100 },
+      { name: 'Problem Solving', level: 'Expert' },
+      { name: 'Team Collaboration', level: 'Expert' },
+      { name: 'English', level: 'Fluent' },
+      { name: 'Arabic', level: 'Native' },
+      { name: 'French', level: 'Proficient' },
     ]
   }
 ]; 

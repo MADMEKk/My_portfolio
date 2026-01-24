@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaGithub, FaLinkedinIn, FaTwitter, FaTiktok, FaTelegram } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope, FaGithub, FaLinkedinIn, FaTiktok, FaTelegram } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 // Components
 import Section from '../components/Section';
 
 // Data
 import { profile } from '../data/profile';
-
-// API endpoint - will use the appropriate URL based on environment
-const API_URL = '/api/send';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -34,32 +32,42 @@ const Contact = () => {
     setSubmitSuccess(false);
     setSubmitError(false);
     setErrorMessage('');
-  
+
+    // Values from environment variables (vite prefix)
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setSubmitError(true);
+      setErrorMessage('Email service is not configured. Please check environment variables.');
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const res = await fetch(API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        }),
-      });
-  
-      const data = await res.json();
-      
-      if (res.ok) {
-        setSubmitSuccess(true);
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        setSubmitError(true);
-        setErrorMessage(data.message || 'An error occurred while sending your message.');
-      }
+      // Prepare template parameters matching your EmailJS template
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Mekkaoui Mohammed', // Optional: Your name
+      };
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      setSubmitSuccess(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       console.error('Error sending message:', error);
       setSubmitError(true);
-      setErrorMessage('Network error. Please check your connection and try again.');
+      setErrorMessage('Failed to send message. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
@@ -77,12 +85,6 @@ const Contact = () => {
       value: profile.email,
       link: `mailto:${profile.email}`,
     },
-    // {
-    //   icon: <FaPhone />,
-    //   label: 'Phone',
-    //   value: profile.phone,
-    //   link: `tel:${profile.phone.replace(/\D/g, '')}`,
-    // },
   ];
 
   const socialLinks = [
@@ -90,14 +92,13 @@ const Contact = () => {
     { icon: <FaLinkedinIn />, url: 'https://www.linkedin.com/in/alaeddine-mekkaoui/', ariaLabel: 'LinkedIn' },
     { icon: <FaTiktok />, url: 'https://www.tiktok.com/@alaeddine5744', ariaLabel: 'TikTok' },
     { icon: <FaTelegram />, url: 'https://t.me/AlaEddineMek', ariaLabel: 'Telegram' },
-    // { icon: <FaWhatsapp />, url: 'https://wa.me/213', ariaLabel: 'WhatsApp' },
     { icon: <FaEnvelope />, url: 'mailto:aeddine360@gmail.com', ariaLabel: 'Email' },
   ];
 
   return (
-    <div className="pt-24 pb-16">
-      <Section 
-        title="Contact Me" 
+    <div className="pt-5 pb-16">
+      <Section
+        title="Contact Me"
         subtitle="Have a question or want to work together? Feel free to reach out!"
         hideSectionNumber
       >
@@ -105,7 +106,7 @@ const Contact = () => {
           {/* Contact Information */}
           <div>
             <h3 className="text-xl font-bold text-light mb-6">Get in Touch</h3>
-            
+
             <div className="space-y-6">
               {contactItems.map((item, index) => (
                 <div key={index} className="flex items-start">
@@ -113,8 +114,8 @@ const Contact = () => {
                   <div className="ml-4">
                     <h4 className="text-light font-medium">{item.label}</h4>
                     {item.link ? (
-                      <a 
-                        href={item.link} 
+                      <a
+                        href={item.link}
                         className="text-tertiary hover:text-secondary transition-colors"
                       >
                         {item.value}
@@ -149,16 +150,16 @@ const Contact = () => {
           {/* Contact Form */}
           <div>
             <h3 className="text-xl font-bold text-light mb-6">Send a Message</h3>
-            
+
             {submitSuccess ? (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-secondary bg-opacity-10 border border-secondary text-secondary p-4 rounded-md"
+                className="bg-accent/10 border border-secondary text-secondary p-4 rounded-md"
               >
                 <p className="font-medium">Thank you for your message!</p>
                 <p className="mt-1">I'll get back to you as soon as possible.</p>
-                <button 
+                <button
                   onClick={() => setSubmitSuccess(false)}
                   className="mt-4 text-sm underline hover:no-underline"
                 >
@@ -179,7 +180,7 @@ const Contact = () => {
                     className="w-full py-3 px-4 bg-dark border border-tertiary border-opacity-30 rounded-md text-light focus:border-secondary focus:outline-none transition-colors"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-light mb-2">Email</label>
                   <input
@@ -192,7 +193,7 @@ const Contact = () => {
                     className="w-full py-3 px-4 bg-dark border border-tertiary border-opacity-30 rounded-md text-light focus:border-secondary focus:outline-none transition-colors"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="subject" className="block text-light mb-2">Subject</label>
                   <input
@@ -205,7 +206,7 @@ const Contact = () => {
                     className="w-full py-3 px-4 bg-dark border border-tertiary border-opacity-30 rounded-md text-light focus:border-secondary focus:outline-none transition-colors"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-light mb-2">Message</label>
                   <textarea
@@ -224,13 +225,12 @@ const Contact = () => {
                     {errorMessage || 'There was an error sending your message. Please try again.'}
                   </div>
                 )}
-                
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`btn btn-primary w-full ${
-                    isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
-                  }`}
+                  className={`btn btn-primary w-full ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                    }`}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>

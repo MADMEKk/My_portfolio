@@ -287,7 +287,7 @@ const MediaGallery = ({ media }) => {
             <div className="absolute inset-0 bg-primary bg-opacity-30 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
               <motion.div 
                 whileHover={{ scale: 1.2 }}
-                className="bg-secondary bg-opacity-80 rounded-full p-4"
+                className="bg-accent rounded-full p-4"
               >
                 <FaPlay className="text-dark text-xl" />
               </motion.div>

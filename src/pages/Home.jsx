@@ -8,10 +8,12 @@ import Section from '../components/Section';
 import MediaGallery from '../components/MediaGallery';
 import HeroSection from '../components/HeroSection';
 import BioSection from '../components/BioSection';
-import SkillsGalaxy from '../components/SkillsGalaxy';
+// import SkillsGalaxy from '../components/SkillsGalaxy'; // Removed
 import Timeline from '../components/Timeline';
+import SkillCard from '../components/SkillCard';
 import Certifications from '../components/Certifications';
 import HackathonShowcase from '../components/HackathonShowcase';
+import BentoGrid from '../components/BentoGrid';
 
 // Data
 import { profile } from '../data/profile';
@@ -29,74 +31,27 @@ const Home = () => {
   };
 
   return (
-    <div className="pt-24">
+    <div className="pt-5">
       {/* Hero Section */}
       <HeroSection />
-      
+
       {/* Bio Section */}
       <BioSection />
-      
-      {/* Skills Galaxy */}
-      <SkillsGalaxy />
-      
+
       {/* Timeline */}
       <Timeline />
-      
+
       {/* Hackathon Showcase - Moved after Timeline */}
       <HackathonShowcase />
-      
+
       {/* Featured Projects Section */}
       <Section id="projects" title="Featured Projects">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {featuredProjects.map((project, index) => (
-            <motion.div 
-              key={project.id} 
-              className="card hover:translate-y-[-5px]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="relative aspect-video rounded-lg overflow-hidden mb-4">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-60"></div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-primary bg-opacity-80 transition-opacity duration-300">
-                  <span className="text-secondary font-mono">View Project</span>
-                </div>
-              </div>
-              <h3 className="text-xl font-bold text-light mb-2">{project.title}</h3>
-              <p className="text-tertiary mb-4">{project.description.slice(0, 100)}...</p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies.slice(0, 4).map((tech, i) => (
-                  <span key={i} className="px-2 py-1 bg-dark text-tertiary text-xs rounded-full">
-                    {tech}
-                  </span>
-                ))}
-                {project.technologies.length > 4 && (
-                  <span className="px-2 py-1 bg-dark text-tertiary text-xs rounded-full">
-                    +{project.technologies.length - 4} more
-                  </span>
-                )}
-              </div>
-              <div className="flex justify-between items-center">
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline text-sm">
-                  View Source
-                </a>
-                <a href={`/projects/${project.id}`} className="btn btn-sm btn-outline">
-                  View Details
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <BentoGrid projects={featuredProjects} />
+
         <div className="flex justify-center mt-12">
-          <motion.a 
-            href="/projects" 
-            className="btn btn-primary"
+          <motion.a
+            href="/projects"
+            className="btn btn-outline border-secondary text-secondary hover:bg-secondary hover:text-primary px-8 py-3 rounded-full font-medium transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -104,12 +59,12 @@ const Home = () => {
           </motion.a>
         </div>
       </Section>
-      
+
       {/* Competitions Section */}
       <Section id="competitions" title="Competitions & Achievements">
         <div className="space-y-12">
           {/* Olympiad */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -124,20 +79,20 @@ const Home = () => {
               </p>
               <div className="space-y-2">
                 <div className="flex items-center">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
                   <span className="text-tertiary">Algorithmic challenges and optimization problems</span>
                 </div>
                 <div className="flex items-center">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
                   <span className="text-tertiary">Recognition from Oran1 Infinite Loop Club</span>
                 </div>
                 <div className="flex items-center">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
                   <span className="text-tertiary">Certificate and shield of recognition</span>
                 </div>
               </div>
             </div>
-            <MediaGallery 
+            <MediaGallery
               mediaItems={[
                 { type: 'image', url: '/media/competitions/olympiad/certificate.jpg', caption: 'Certificate of Recognition' },
                 { type: 'image', url: '/media/competitions/olympiad/shield.jpg', caption: 'Shield of Recognition' },
@@ -146,16 +101,16 @@ const Home = () => {
               ]}
             />
           </motion.div>
-          
+
           {/* Oran Hackathon */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <MediaGallery 
+            <MediaGallery
               mediaItems={[
                 { type: 'image', url: '/media/competitions/oran/certificate.jpg', caption: 'Hackathon Certificate' },
                 { type: 'image', url: '/media/competitions/oran/honoring.jpg', caption: 'Honoring Ceremony' },
@@ -173,23 +128,23 @@ const Home = () => {
               </p>
               <div className="space-y-2">
                 <div className="flex items-center">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
                   <span className="text-tertiary">Smart agriculture solution with real-time monitoring</span>
                 </div>
                 <div className="flex items-center">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
                   <span className="text-tertiary">IoT sensors integration with mobile application</span>
                 </div>
                 <div className="flex items-center">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
                   <span className="text-tertiary">Machine learning for crop yield prediction</span>
                 </div>
               </div>
             </div>
           </motion.div>
-          
+
           {/* Laghouat Hackathon */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -205,20 +160,20 @@ const Home = () => {
               </p>
               <div className="space-y-2">
                 <div className="flex items-center">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
                   <span className="text-tertiary">Smart home automation with Arduino</span>
                 </div>
                 <div className="flex items-center">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
                   <span className="text-tertiary">Mobile application for remote control</span>
                 </div>
                 <div className="flex items-center">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
                   <span className="text-tertiary">Energy conservation algorithms</span>
                 </div>
               </div>
             </div>
-            <MediaGallery 
+            <MediaGallery
               mediaItems={[
                 { type: 'image', url: '/media/competitions/laghouat/participation.jpg', caption: 'Participation Certificate' },
                 { type: 'video', url: '/media/competitions/laghouat/laghouat.mp4', caption: 'Hackathon Overview' },
@@ -233,7 +188,7 @@ const Home = () => {
       <Section id="about" title="About Me">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="md:col-span-2">
-            <motion.div 
+            <motion.div
               className="text-tertiary space-y-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -244,8 +199,8 @@ const Home = () => {
                 <p key={index} className="leading-relaxed">{paragraph.trim()}</p>
               ))}
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="mt-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -253,14 +208,14 @@ const Home = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <div className="flex items-center mb-6">
-                <div className="w-10 h-1 bg-secondary mr-3"></div>
+                <div className="w-10 h-1 bg-accent mr-3"></div>
                 <h3 className="text-xl font-bold text-light">Professional Experience</h3>
               </div>
               <div className="space-y-6">
                 {profile.experience.map((exp, index) => (
-                  <motion.div 
-                    key={index} 
-                    className="card hover:translate-y-[-5px] border-l-2 border-secondary pl-4"
+                  <motion.div
+                    key={index}
+                    className="glass-card p-6 border-l-4 border-secondary hover:translate-y-[-5px] transition-all duration-300"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -289,7 +244,7 @@ const Home = () => {
               </div>
             </motion.div>
           </div>
-          
+
           <div className="md:col-span-1">
             <div className="sticky top-24 space-y-8">
               <motion.div
@@ -299,14 +254,14 @@ const Home = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-6 h-1 bg-secondary mr-3"></div>
+                  <div className="w-6 h-1 bg-accent mr-3"></div>
                   <h3 className="text-xl font-bold text-light">Education</h3>
                 </div>
                 <div className="space-y-4">
                   {profile.education.map((edu, index) => (
-                    <motion.div 
-                      key={index} 
-                      className="card hover:translate-y-[-5px] border-l-2 border-secondary pl-4"
+                    <motion.div
+                      key={index}
+                      className="glass-card p-6 border-l-4 border-secondary hover:translate-y-[-5px] transition-all duration-300"
                       initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
@@ -328,7 +283,7 @@ const Home = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-6 h-1 bg-secondary mr-3"></div>
+                  <div className="w-6 h-1 bg-accent mr-3"></div>
                   <h3 className="text-xl font-bold text-light">Contact Information</h3>
                 </div>
                 <div className="card hover:translate-y-[-5px] bg-dark bg-opacity-50">
@@ -346,41 +301,38 @@ const Home = () => {
 
       {/* Skills Section */}
       <Section id="skills" title="Professional Skills">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
           {skills.map((skillGroup, index) => (
-            <div key={index} className="card hover:translate-y-[-5px]">
-              <h3 className="text-xl font-bold text-light mb-4 flex items-center">
-                <span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+            <motion.div
+              key={index}
+              className="glass-card p-8 hover:border-secondary/30 transition-all duration-500 shadow-2xl"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <h3 className="text-2xl font-bold text-light mb-8 flex items-center">
+                <span className="w-3 h-3 bg-secondary rounded-full mr-3 shadow-[0_0_10px_rgba(100,255,218,0.5)]"></span>
                 {skillGroup.category}
               </h3>
-              <div className="space-y-4">
-                {skillGroup.technologies.map((skill) => (
-                  <div key={skill.name} className="space-y-1">
-                    <div className="flex justify-between items-center">
-                      <span className="text-tertiary">{skill.name}</span>
-                      <span className="text-xs text-secondary font-mono">{skill.level}%</span>
-                    </div>
-                    <div className="w-full h-2 bg-dark rounded-full overflow-hidden">
-                      <motion.div 
-                        className="h-full bg-secondary"
-                        style={{ width: `${skill.level}%` }}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                      />
-                    </div>
-                  </div>
+              <div className="grid grid-cols-1 gap-6">
+                {skillGroup.technologies.map((skill, sIndex) => (
+                  <SkillCard
+                    key={skill.name}
+                    name={skill.name}
+                    level={skill.level}
+                    index={sIndex}
+                  />
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </Section>
 
       {/* Contact CTA */}
-      <Section 
-        id="contact-cta" 
+      <Section
+        id="contact-cta"
         title="Get In Touch"
         subtitle="Have an exciting project in mind or just want to say hi? My inbox is always open!"
       >
