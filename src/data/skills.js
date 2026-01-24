@@ -3,41 +3,41 @@ export const skills = [
   {
     category: 'Backend & Systems',
     technologies: [
-      { name: 'Python (Django/DRF)', level: 'Expert' },
-      { name: 'PostgreSQL / SQL', level: 'Proficient' },
-      { name: 'Docker & DevOps', level: 'Proficient' },
-      { name: 'Redis / Celery', level: 'Advanced' },
-      { name: 'Nginx', level: 'Intermediate' },
+      { name: 'Python (Django/DRF)' },
+      { name: 'PostgreSQL / SQL' },
+      { name: 'Docker & DevOps' },
+      { name: 'Redis / Celery' },
+      { name: 'Nginx' },
     ]
   },
   {
     category: 'Frontend & Mobile',
     technologies: [
-      { name: 'Flutter (Dart)', level: 'Advanced' },
-      { name: 'React.js', level: 'Proficient' },
-      { name: 'JavaScript / ES6+', level: 'Expert' },
-      { name: 'HTML5 / CSS3', level: 'Expert' },
-      { name: 'TailwindCSS', level: 'Proficient' },
+      { name: 'Flutter (Dart)' },
+      { name: 'React.js' },
+      { name: 'JavaScript / ES6+' },
+      { name: 'HTML5 / CSS3' },
+      { name: 'TailwindCSS' },
     ]
   },
   {
     category: 'AI & Robotics',
     technologies: [
-      { name: 'PyTorch / TensorFlow', level: 'Advanced' },
-      { name: 'Computer Vision (YOLO)', level: 'Advanced' },
-      { name: 'LLMs (T5, GPT)', level: 'Intermediate' },
-      { name: 'ROS2', level: 'Intermediate' },
-      { name: 'Reinforcement Learning', level: 'Intermediate' },
+      { name: 'PyTorch / TensorFlow' },
+      { name: 'Computer Vision (YOLO)' },
+      { name: 'LLMs (T5, GPT)' },
+      { name: 'ROS2' },
+      { name: 'Reinforcement Learning' },
     ]
   },
   {
     category: 'Core Competencies',
     technologies: [
-      { name: 'System Architecture', level: 'Expert' },
-      { name: 'Problem Solving', level: 'Expert' },
-      { name: 'Linux / Bash', level: 'Proficient' },
-      { name: 'Git & CI/CD', level: 'Expert' },
-      { name: 'Trilingual Communication', level: 'Fluent' },
+      { name: 'System Architecture' },
+      { name: 'Problem Solving' },
+      { name: 'Linux / Bash' },
+      { name: 'Git & CI/CD' },
+      { name: 'Trilingual Communication' },
     ]
   }
 ]; 

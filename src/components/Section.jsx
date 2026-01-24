@@ -26,7 +26,7 @@ const Section = ({
       className={`section ${className}`}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.1, margin: "-100px" }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={sectionVariants}
     >
       {title && (

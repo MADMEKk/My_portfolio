@@ -143,11 +143,11 @@ const Home = () => {
 
       {/* Skills Section */}
       <Section id="skills" title="Professional Skills">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 lg:gap-16">
           {skills.map((skillGroup, index) => (
             <div
               key={index}
-              className="glass-card p-8 hover:border-secondary/30 transition-all duration-500 shadow-2xl"
+              className="glass-card p-6 md:p-8 hover:border-secondary/30 transition-all duration-500 shadow-2xl"
             >
               <h3 className="text-2xl font-bold text-light mb-8 flex items-center">
                 <span className="w-3 h-3 bg-secondary rounded-full mr-3 shadow-[0_0_10px_rgba(100,255,218,0.5)]"></span>
@@ -158,7 +158,7 @@ const Home = () => {
                   <SkillCard
                     key={skill.name}
                     name={skill.name}
-                    level={skill.level}
+
                     index={sIndex}
                   />
                 ))}

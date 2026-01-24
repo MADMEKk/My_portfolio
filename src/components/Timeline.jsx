@@ -7,7 +7,7 @@ const TimelineItem = ({ date, title, subtitle, description, icon, isLeft, index 
     <motion.div
       initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, amount: 0.1, margin: "-50px" }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
       className={`flex items-start gap-6 ${isLeft ? 'md:flex-row-reverse' : 'md:flex-row'} flex-col mb-16 relative w-full`}
     >
