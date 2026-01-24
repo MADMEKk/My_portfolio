@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaTrophy, FaMedal, FaLinkedin, FaTwitter, FaEnvelope, FaMapMarkerAlt, FaPhone, FaChevronDown } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 // Components
 import Section from '../components/Section';
@@ -22,13 +22,6 @@ import { projects } from '../data/projects';
 
 const Home = () => {
   const featuredProjects = projects.filter(project => project.featured);
-
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="pt-5">
@@ -200,13 +193,7 @@ const Home = () => {
               ))}
             </motion.div>
 
-            <motion.div
-              className="mt-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+            <div className="mt-8">
               <div className="flex items-center mb-6">
                 <div className="w-10 h-1 bg-accent mr-3"></div>
                 <h3 className="text-xl font-bold text-light">Professional Experience</h3>
@@ -242,17 +229,12 @@ const Home = () => {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
 
           <div className="md:col-span-1">
             <div className="sticky top-24 space-y-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
+              <div>
                 <div className="flex items-center mb-4">
                   <div className="w-6 h-1 bg-accent mr-3"></div>
                   <h3 className="text-xl font-bold text-light">Education</h3>
@@ -274,7 +256,7 @@ const Home = () => {
                     </motion.div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -303,13 +285,9 @@ const Home = () => {
       <Section id="skills" title="Professional Skills">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
           {skills.map((skillGroup, index) => (
-            <motion.div
+            <div
               key={index}
               className="glass-card p-8 hover:border-secondary/30 transition-all duration-500 shadow-2xl"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <h3 className="text-2xl font-bold text-light mb-8 flex items-center">
                 <span className="w-3 h-3 bg-secondary rounded-full mr-3 shadow-[0_0_10px_rgba(100,255,218,0.5)]"></span>
@@ -325,7 +303,7 @@ const Home = () => {
                   />
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Section>
@@ -348,4 +326,4 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default Home;

@@ -5,9 +5,9 @@ import { FaGraduationCap, FaBriefcase, FaTrophy, FaCode, FaArrowDown } from 'rea
 const TimelineItem = ({ date, title, subtitle, description, icon, isLeft, index }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+      initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 50 }}
       className={`flex items-start gap-6 ${isLeft ? 'md:flex-row-reverse' : 'md:flex-row'} flex-col mb-16 relative w-full`}
     >

@@ -13,7 +13,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    title: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,11 +48,11 @@ const Contact = () => {
     try {
       // Prepare template parameters matching your EmailJS template
       const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
+        name: formData.name,
+        email: formData.email,
+        title: formData.title,
+        time: new Date().toLocaleString(),
         message: formData.message,
-        to_name: 'Mekkaoui Mohammed', // Optional: Your name
       };
 
       await emailjs.send(
@@ -63,7 +63,7 @@ const Contact = () => {
       );
 
       setSubmitSuccess(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', title: '', message: '' });
     } catch (error) {
       console.error('Error sending message:', error);
       setSubmitError(true);
@@ -195,12 +195,12 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-light mb-2">Subject</label>
+                  <label htmlFor="title" className="block text-light mb-2">Subject</label>
                   <input
                     type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
+                    id="title"
+                    name="title"
+                    value={formData.title}
                     onChange={handleChange}
                     required
                     className="w-full py-3 px-4 bg-dark border border-tertiary border-opacity-30 rounded-md text-light focus:border-secondary focus:outline-none transition-colors"

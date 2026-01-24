@@ -11,23 +11,22 @@ const Section = ({
 }) => {
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
+    visible: {
+      opacity: 1,
+      transition: {
         duration: 0.6,
-        ease: 'easeOut' 
-      } 
+        ease: 'easeOut'
+      }
     }
   };
 
   return (
-    <motion.section 
-      id={id} 
+    <motion.section
+      id={id}
       className={`section ${className}`}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true }}
       variants={sectionVariants}
     >
       {title && (
