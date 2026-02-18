@@ -259,7 +259,7 @@ const MediaGallery = ({ media }) => {
                 onLoad={() => handleImageLoad(key)}
                 onError={() => handleImageLoad(key)}
               />
-              <div className="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+              <div className="absolute inset-0  group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
                   {item.type === 'certificate' ? (
                     <FaAward className="text-secondary text-3xl" />
@@ -467,8 +467,8 @@ const MediaGallery = ({ media }) => {
 
               {/* Thumbnail navigation - position differently for real estate screenshots */}
               <div className={`absolute ${zoomMode
-                  ? 'top-4 right-16 flex-col h-auto max-h-[80vh] overflow-y-auto py-2 px-1 gap-2'
-                  : '-bottom-16 left-0 right-0 py-4 px-2 gap-2'
+                ? 'top-4 right-16 flex-col h-auto max-h-[80vh] overflow-y-auto py-2 px-1 gap-2'
+                : '-bottom-16 left-0 right-0 py-4 px-2 gap-2'
                 } flex ${zoomMode
                   ? 'flex-col justify-start items-end'
                   : 'justify-center items-center overflow-x-auto'
@@ -479,8 +479,8 @@ const MediaGallery = ({ media }) => {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className={`${zoomMode
-                        ? 'w-12 h-12'
-                        : 'w-16 h-16'
+                      ? 'w-12 h-12'
+                      : 'w-16 h-16'
                       } rounded-md overflow-hidden border-2 transition-all duration-300 ${index === activeIndex ? 'border-secondary' : 'border-transparent'
                       }`}
                     onClick={(e) => {
