@@ -101,10 +101,10 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 2.1 }}
           >
-            <a href="https://github.com/AlaEddineMEKKAOUI" target="_blank" rel="noopener noreferrer" className="text-tertiary hover:text-secondary text-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-110">
+            <a href="https://github.com/MADMEKk" target="_blank" rel="noopener noreferrer" className="text-tertiary hover:text-secondary text-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-110">
               <FaGithub />
             </a>
-            <a href="https://www.linkedin.com/in/alaeddine-mekkaoui/" target="_blank" rel="noopener noreferrer" className="text-tertiary hover:text-secondary text-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-110">
+            <a href="https://www.linkedin.com/in/ala-eddine-946536275/" target="_blank" rel="noopener noreferrer" className="text-tertiary hover:text-secondary text-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-110">
               <FaLinkedinIn />
             </a>
             <a href="https://www.tiktok.com/@alaeddine5744" target="_blank" rel="noopener noreferrer" className="text-tertiary hover:text-secondary text-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-110">

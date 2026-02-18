@@ -7,8 +7,8 @@ import ParticleBackground from './ParticleBackground';
 const Footer = () => {
   // Social links with actual URLs
   const socialLinks = [
-    { icon: <FaGithub />, url: 'https://github.com/AlaEddineMEKKAOUI', ariaLabel: 'GitHub' },
-    { icon: <FaLinkedinIn />, url: 'https://www.linkedin.com/in/alaeddine-mekkaoui/', ariaLabel: 'LinkedIn' },
+    { icon: <FaGithub />, url: 'https://github.com/MADMEKk', ariaLabel: 'GitHub' },
+    { icon: <FaLinkedinIn />, url: 'https://www.linkedin.com/in/ala-eddine-946536275/', ariaLabel: 'LinkedIn' },
     { icon: <FaTiktok />, url: 'https://www.tiktok.com/@alaeddine5744', ariaLabel: 'TikTok' },
     { icon: <FaTelegram />, url: 'https://t.me/AlaEddineMek', ariaLabel: 'Telegram' },
     { icon: <FaEnvelope />, url: 'mailto:aeddine360@gmail.com', ariaLabel: 'Email' },
