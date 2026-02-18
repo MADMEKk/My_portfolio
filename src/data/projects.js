@@ -1,5 +1,124 @@
 export const projects = [
   {
+    id: 'enterprise-marketplace',
+    title: 'Enterprise Multi-Vendor Marketplace Platform',
+    description: 'Shoplify is a scalable, full-featured multi-vendor e-commerce platform designed to empower entrepreneurs to launch their own online stores within a unified marketplace.',
+    longDescription: `Shoplify is a scalable, full-featured multi-vendor e-commerce platform designed to empower entrepreneurs to launch their own online stores within a unified marketplace. Built with a robust Django backend and a high-performance React frontend, the platform offers a seamless experience for vendors to manage products, orders, and store designs, while providing customers with a diverse and secure shopping environment.
+
+Key Features:
+• Advanced Vendor Dashboard: A comprehensive control panel for vendors to manage their entire business lifecycle, including product inventory, order processing, and payout requests.
+• Drag-and-Drop Store Builder: A sophisticated, user-friendly interface allowing vendors to customize their storefronts. Features include drag-and-drop carousels, customizable product sections, and video integration, all without writing a single line of code.
+• Tiered Subscription System: A complex subscription management engine that enforces usage limits based on plan tiers. It governs product counts, image uploads, and access to premium features like advanced analytics, ensuring a scalable business model for the platform owner.
+• Global Reach & Localization: Fully localized for Arabic and French markets, with RTL (Right-to-Left) support, multi-currency capabilities, and region-specific shipping configurations.
+• Integrated Marketing Suite: Built-in support for major marketing tools, including major social media pixels and direct WhatsApp integration.
+• Real-Time Analytics: Interactive dashboards providing deep insights into sales performance, revenue trends, and visitor engagement.`,
+    image: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20011754.png',
+    technologies: ['Django', 'React', 'PostgreSQL', 'Docker', 'Redis', 'Celery', 'Tailwind CSS', 'Nginx', 'Radix UI'],
+    features: [
+      'Advanced Vendor Dashboard with Role-Based Access',
+      'Drag-and-Drop Store Builder',
+      'Tiered Subscription System with Usage Limits',
+      'Global Reach & Localization (Arabic/French/RTL)',
+      'Integrated Marketing Suite (Pixels, WhatsApp)',
+      'Real-Time Analytics & Reporting'
+    ],
+    github: '#', // Private or to be added
+    liveDemo: '#', // To be added
+    featured: true,
+    media: [
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20011754.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20011754.png',
+        caption: 'Dashboard Overview'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20011842.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20011842.png',
+        caption: 'Analytics Dashboard'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20011925.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20011925.png',
+        caption: 'Product Management'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20011941.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20011941.png',
+        caption: 'Order Management'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012011.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012011.png',
+        caption: 'Store Builder Interface'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012025.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012025.png',
+        caption: 'Theme Customization'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012048.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012048.png',
+        caption: 'Subscription Plans'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012102.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012102.png',
+        caption: 'Marketing Tools'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012119.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012119.png',
+        caption: 'Pixel Integration'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012136.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012136.png',
+        caption: 'Customer Support'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012159.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012159.png',
+        caption: 'Vendor Settings'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012212.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012212.png',
+        caption: 'Payout Requests'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012226.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012226.png',
+        caption: 'Transaction History'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012245.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012245.png',
+        caption: 'Storefront Preview'
+      },
+      {
+        type: 'screenshot',
+        url: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012303.png',
+        thumbnail: '/media/projects/multistore_platform/Capture%20d%27%C3%A9cran%202026-02-18%20012303.png',
+        caption: 'Mobile Responsiveness'
+      }
+    ]
+  },
+  {
     id: 'real-estate-platform',
     title: 'Real Estate Platform',
     description: 'A production-grade real estate platform handling thousands of listings. Built with Django & React, it features a custom audit logging system, Celery for background image processing, and full multilingual support (Arabic/French/English).',
